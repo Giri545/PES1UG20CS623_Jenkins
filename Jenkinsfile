@@ -4,14 +4,14 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'g++ -o output_file new_working.cpp'
+                sh 'g++ -o output new.cpp'
                 build job : 'PES1UG20CS641-1'
                 echo 'Build Stage Successful'
             }
         }
         stage('Test') {
             steps {
-                sh './output_file'
+                sh './output'
             }
         }
         stage('Deploy') {
